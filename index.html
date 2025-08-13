@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ARG OS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Boot -->
+<div id="boot">
+  <p>Initializing OS...</p>
+  <p>Loading drivers...</p>
+  <p id="boot-msg">Starting up...</p>
+</div>
+
+<!-- Login -->
+<div id="login" class="hidden">
+  <div id="login-box">
+    <label>Username:</label>
+    <input id="username" placeholder="Enter username">
+    <label>Password:</label>
+    <input id="password" type="password" placeholder="Enter password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- Desktop -->
+<div id="desktop" class="hidden">
+  <div class="icon" onclick="startPictoChat()">📱 Picto Chat</div>
+  <div class="icon" onclick="alert('Settings not responding')">⚙️ Settings</div>
+  <div class="icon" onclick="alert('Documents not responding')">📂 Documents</div>
+  <div class="icon" onclick="alert('Applications not responding')">🖥 Applications</div>
+  <div id="taskbar">
+    <div id="start-btn" onclick="toggleStartMenu()">Start</div>
+    <div id="clock"></div>
+  </div>
+  <div id="start-menu">
+    <p>Profile</p>
+    <p>Settings</p>
+    <p>Power</p>
+  </div>
+</div>
+
+<!-- Chat -->
+<div id="chat" class="hidden">
+  <div class="chat-box" id="chatBox">
+    <p><strong>Friend1:</strong> Hey, check out this new game I found!</p>
+    <p><strong>You:</strong> Oh cool, what's it called?</p>
+    <p><strong>Friend1:</strong> Just click the link...</p>
+  </div>
+  <input class="chat-input" id="chatInput" placeholder="Click to start the game" readonly onclick="startDownload()">
+</div>
+
+<!-- Download -->
+<div id="download" class="hidden">
+  <h2 style="text-align:center;">Downloading Game...</h2>
+  <div id="download-bar"><div id="progress"></div></div>
+  <p id="status" style="text-align:center; margin-top:10px;">Initializing...</p>
+</div>
+
+<!-- Game -->
+<div id="game" class="hidden">
+  <canvas id="gameCanvas" width="600" height="400"></canvas>
+  <p id="hint"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
